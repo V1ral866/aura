@@ -1,0 +1,9 @@
+<aura:component>
+    <aura:handler name="newAnimalCreated" event="c:animalCreated" action="{!c.updateAnimalList}" />
+    <div class="slds-m-around_x-small">
+        <c:animalCreateForm/>
+    </div>
+    <div class="slds-m-around_x-small">
+        <c:animalsList/>
+    </div>
+</aura:component>	
