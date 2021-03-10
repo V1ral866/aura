@@ -1,26 +1,21 @@
 <aura:component controller="AnimalAuraController">
     <aura:registerEvent name="newAnimalCreated" type="c:animalCreated"/>
-	<aura:attribute name="newAnimal" type="Animal__c" default="{ 'sobjectType': 'Animal__c',
-                                                                    'Name': '',
-                                                                    'Eats__c': '',
-                                                                    'Says__c': '',
-                                                                    'ExternalId__c': 0
-																}"/>
+	<aura:attribute name="newAnimal" type="Map" default="{'name': '', 'eats': '', 'says': '', 'externalId': '0'}"/>
 	
     <form class="slds-form_stacked">
         <lightning:input aura:id="animalform" label="Animal Name"
                             name="name"
-                            value="{!v.newAnimal.Name}"
+                            value="{!v.newAnimal.name}"
                             required="true"/>
         <lightning:input aura:id="animalform" label="Eats"
                             name="eats"
-                            value="{!v.newAnimal.Eats__c}"/>
+                            value="{!v.newAnimal.eats}"/>
         <lightning:input aura:id="animalform" label="Says"
                             name="says"
-                            value="{!v.newAnimal.Says__c}"/>
+                            value="{!v.newAnimal.says}"/>
         <lightning:input aura:id="animalform" label="External Id"
                             name="externalid"
-                            value="{!v.newAnimal.ExternalId__c}"/>
+                            value="{!v.newAnimal.externalId}"/>
         <lightning:button label="Create Animal"
                             class="slds-m-top_medium"
                             variant="brand"

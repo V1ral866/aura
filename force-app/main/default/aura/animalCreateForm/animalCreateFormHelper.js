@@ -1,13 +1,14 @@
 ({
     createAnimal : function(component, animal) {
         let action = component.get("c.addAnimal");
+		console.log(' ' + animal);
 		action.setParams({
-			"animal": animal
+			"aWrapper": animal
 		});
 		action.setCallback(this, function(response){
 			let state = response.getState();
 			if (state === "SUCCESS") {
-				component.set('v.newAnimal', { 'sobjectType': 'Animal__c', 'Name': '', 'Eats__c': '', 'Says__c': '', 'ExternaId__c': 0 });
+				component.set('v.newAnimal', { 'name': '', 'eats': '', 'says': '', 'externaId': '0' });
                 let newAnimalEvent = component.getEvent("newAnimalCreated");
                 newAnimalEvent.fire();
 			}

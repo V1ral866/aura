@@ -1,5 +1,5 @@
 <aura:component controller="AnimalAuraController">
-    <aura:attribute type="Animal__c[]" name="animals"/>
+    <aura:attribute type="Object[]" name="animals"/>
     <aura:attribute name="columns" type="List"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
     <aura:handler name="newAnimalCreated" event="c:animalCreated" action="{!c.updateAnimalList}" />
